@@ -10,21 +10,22 @@ namespace SignagePages.StartUp
     public class IntitializeRavenDb : BootstrapItem
     {
         readonly IContainer _container;
+        readonly IRavenDbSettings _settings;
 
-        public IntitializeRavenDb(IContainer container)
+        public IntitializeRavenDb(IContainer container, IRavenDbSettings settings)
         {
             _container = container;
+            _settings = settings;
+            _lazyStore = new Lazy<IDocumentStore>(CreateDocumentStore);
         }
 
-        static readonly Lazy<IDocumentStore> _lazyStore = new Lazy<IDocumentStore>(CreateDocumentStore);
+        readonly Lazy<IDocumentStore> _lazyStore;
 
-        static IDocumentStore CreateDocumentStore()
+        IDocumentStore CreateDocumentStore()
         {
-            var settings = new RavenDbSettings();
-
             var store = new EmbeddableDocumentStore
                             {
-                                DataDirectory = settings.DataDirectory
+                                DataDirectory = _settings.DataDirectory
                             };
             store.Initialize();
             return store;
@@ -34,9 +35,17 @@ namespace SignagePages.StartUp
         {
             _container.Configure(c =>
             {
-                c.For<IDocumentSession>().Singleton().Use(() => _lazyStore.Value.OpenSession());
+                c.For<IDocumentSession>().HybridHttpOrThreadLocalScoped().Use(() => _lazyStore.Value.OpenSession());
                 c.For<IDocumentStore>().Singleton().Use(() => _lazyStore.Value);
             });
+        }
+
+        protected override void Disposing(bool disposed)
+        {
+            if (disposed)
+            {
+                _container.GetInstance<IDocumentStore>().Dispose();
+            }
         }
     }
 }

@@ -5,26 +5,36 @@ using Aperea.Settings;
 
 namespace SignagePages.Settings
 {
-    public class RavenDbSettings
+    public class RavenDbSettings : IRavenDbSettings
     {
-        readonly ApplicationSettings _settings;
+        readonly IApplicationSettings _settings;
 
-        public RavenDbSettings()
+        public RavenDbSettings(IApplicationSettings settings)
         {
-            _settings = new ApplicationSettings();
+            _settings = settings;
         }
 
         public string DataDirectory
         {
-            get { 
-                var path = _settings.Get("Raven/DataDir", () => "~/App_Data"); 
+            get
+            {
+                var path = _settings.Get("Raven/DataDir", () => "~/App_Data");
                 if (path.StartsWith(@"~"))
                 {
-                    path = HostingEnvironment.MapPath(path);
+                    if (HostingEnvironment.IsHosted)
+                    {
+                        path = HostingEnvironment.MapPath(path);
+                    }
+                    else
+                    {
+                        throw new ApplicationException(
+                            "application is not hosted in an asp.net web server environment, use an absolute path for Raven/DataDir");
+                    }
                 }
                 if (!Directory.Exists(path))
                 {
-                    Directory.CreateDirectory(path);
+                    throw new ApplicationException(
+                        string.Format("the Raven/DataDir {0} must exist for storing the database", path));
                 }
                 return path;
             }

@@ -1,13 +1,13 @@
 <SolutionConfiguration>
-  <FileVersion>0</FileVersion>
-  <AutoEnableOnStartup>Default</AutoEnableOnStartup>
+  <FileVersion>1</FileVersion>
+  <AutoEnableOnStartup>True</AutoEnableOnStartup>
   <AllowParallelTestExecution>false</AllowParallelTestExecution>
   <AllowTestsToRunInParallelWithThemselves>true</AllowTestsToRunInParallelWithThemselves>
   <FrameworkUtilisationTypeForNUnit>UseDynamicAnalysis</FrameworkUtilisationTypeForNUnit>
   <FrameworkUtilisationTypeForGallio>UseStaticAnalysis</FrameworkUtilisationTypeForGallio>
   <FrameworkUtilisationTypeForMSpec>UseStaticAnalysis</FrameworkUtilisationTypeForMSpec>
   <FrameworkUtilisationTypeForMSTest>UseStaticAnalysis</FrameworkUtilisationTypeForMSTest>
-  <EngineModes>Run all tests automatically:BFRydWU=;Run all tests manually:BUZhbHNl;Run impacted tests automatically, others manually (experimental!):CklzSW1wYWN0ZWQ=;Run pinned tests automatically, others manually:CElzUGlubmVk</EngineModes>
+  <EngineModes>Run all tests automatically:BFRydWU=;Run all tests manually:BUZhbHNl;Run impacted tests automatically, others manually (experimental!):CklzSW1wYWN0ZWQ=;Run pinned tests automatically, others manually:CElzUGlubmVk;Run all failing, impacted, not runned, pinned not passing:DlN0cnVjdHVyYWxOb2RlBQAAAAlJc0ZhaWxpbmcKSXNJbXBhY3RlZA1IYXNOb3RCZWVuUnVuCElzUGlubmVkDElzTm90UGFzc2luZwEAAAABAAAAAQAAAAEAAAA=;New engine mode:BUZhbHNl</EngineModes>
   <MetricsExclusionList>
 </MetricsExclusionList>
 </SolutionConfiguration>
