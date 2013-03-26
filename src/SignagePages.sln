@@ -13,6 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Globals", "Globals", "{3AEE6672-B921-4084-8B74-DF8FF459778B}"
 	ProjectSection(SolutionItems) = preProject
 		..\license.md = ..\license.md
+		..\readme.md = ..\readme.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignagePages.Specs", "SignagePages.Specs\SignagePages.Specs.csproj", "{5C0A6FB0-7320-4AF1-A992-442A3F0BAEC2}"

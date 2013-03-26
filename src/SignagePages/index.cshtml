@@ -1,8 +1,35 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-</body>
+﻿@using System.Web.Optimization;
+<!DOCTYPE html>
+<html data-ng-app="SignagePages">
+    <head>
+        <title>Signage Pages</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        @Styles.Render("~/resources/style_css")
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="#/">Signage Pages</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li data-ctrl="Home"><a href="#/">Home</a></li>
+                            <li data-ctrl="DailyMeals"><a href="#/dailymeals">Speisekarte</a></li>
+                            <li data-ctrl="Login"><a href="#/login">Login</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <ng-view></ng-view>
+        </div>
+        @Scripts.Render("~/resources/framework_js")
+        @Scripts.Render("~/resources/app_js")
+    </body>
 </html>

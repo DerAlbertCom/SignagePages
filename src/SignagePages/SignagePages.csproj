@@ -108,6 +108,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
+    <TypeScriptCompile Include="app\LoginController.ts" />
+    <Content Include="app\DailyMealsController.js" />
+    <Content Include="app\LoginController.js">
+      <DependentUpon>LoginController.ts</DependentUpon>
+    </Content>
+    <Content Include="app\routes.js" />
+    <Content Include="app\HomeController.js" />
+    <Content Include="app\dataaccess.js" />
+    <Content Include="app\directives.js" />
+    <Content Include="Content\app.css">
+      <DependentUpon>app.less</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -288,20 +301,31 @@
     <Content Include="Scripts\i18n\angular-locale_zh-hk.js" />
     <Content Include="Scripts\i18n\angular-locale_zh-tw.js" />
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
+    <Content Include="home.cshtml" />
+    <Content Include="login.cshtml" />
+    <Content Include="Content\app.less" />
+    <Content Include="app\LoginController.js.map">
+      <DependentUpon>LoginController.ts</DependentUpon>
+    </Content>
+    <Content Include="dailymeals.cshtml" />
     <None Include="index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jstd-scenario-adapter-config.js" />
     <Content Include="Scripts\jstd-scenario-adapter.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\WebUser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Settings\IRavenDbSettings.cs" />
+    <Compile Include="StartUp\IntitializeBundles.cs" />
     <Compile Include="StartUp\IntitializeRavenDb.cs" />
     <Compile Include="Infrastructure\IoC\StructureMapDependencyScope.cs" />
     <Compile Include="Infrastructure\IoC\StructureMapResolver.cs" />
@@ -320,6 +344,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -335,7 +360,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>7070</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:18774/</IISUrl>
+          <IISUrl>http://localhost:34001/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
