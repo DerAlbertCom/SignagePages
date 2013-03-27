@@ -2,8 +2,8 @@
 (function(pages) {
     (function(controller) {
 
-        function dailyMealsController($scope) {
-
+        function dailyMealsController($scope)
+        {
         }
 
         controller.DailyMeals = ['$scope', dailyMealsController];

@@ -6,10 +6,9 @@ var Pages;
             LoginController
         ];
         function LoginController($scope) {
-            $scope.userName = "Foo";
+            $scope.userName = "Bar";
             $scope.password = "";
         }
     })(Pages.Controller || (Pages.Controller = {}));
     var Controller = Pages.Controller;
 })(Pages || (Pages = {}));
-//@ sourceMappingURL=LoginController.js.map
