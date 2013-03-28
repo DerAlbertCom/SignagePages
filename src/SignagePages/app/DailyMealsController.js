@@ -97,6 +97,9 @@
                 hideButtons($scope.days);
                 menu.$_showButtons = true;
             }
+            $scope.isShowButtons=function(menu) {
+                return menu.$_showButtons || $scope.isDirty(menu)
+            }
         }
 
         controller.DailyMeals = ['$scope', dailyMealsController];
