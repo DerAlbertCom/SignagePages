@@ -1,28 +1,61 @@
 ﻿body {
-    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
 
 .form-signin {
-    max-width: 300px;
-    padding: 19px 29px 29px;
-    margin: 0 auto 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;
-    box-shadow: rgba(0,0,0,.05) 1px 1px;
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, .1) 1px 1px;
 
-    .form-signin-heading,
-    .checkbox {
-        margin-bottom: 10px;
-    }
+  .form-signin-heading,
+  .checkbox {
+    margin-bottom: 10px;
+  }
 
-    input[type="text"],
-    input[type="password"] {
-        font-size: 16px;
-        height: auto;
-        margin-bottom: 15px;
-        padding: 7px 9px;
-    }
+  input[type="text"],
+  input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+  }
 }
 
+.dailymeals {
 
+  .show {
+    .btn-overlay {
+      position: absolute;
+      z-index: 200;
+      opacity: 0.9;
+      margin-left: -1em;
+      margin-top: -1em;
+      .btn {
+        margin-top: 2px;
+      }
+    }
+
+    em {
+      padding-left: 1.5em;
+    }
+  }
+
+  .preview {
+    border-radius: 5px;
+    display: block;
+    border: 1px solid rgba(0,0,0,.1);
+    text-align: center;
+  }
+
+  .edit {
+    input[type=text] {
+      border-color:  rgba(0,0,0,.1);
+      padding: 1px;
+      margin: 0px;
+    }
+  }
+}

@@ -3,7 +3,6 @@
     (function(controller) {
 
         function homeController($scope) {
-
         }
 
         controller.Home = ['$scope', homeController];
