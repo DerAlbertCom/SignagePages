@@ -14,6 +14,18 @@
             };
         }
 
+        function buttonSubmitDirective() {
+            return {
+                restrict: 'E',
+                replace: true,
+                scope: {
+                    title : '@',
+                    action: '&'
+                },
+                template : "<button type='submit'  class='btn btn-info btn-small'  ng-click='action(menu)' ><i class='icon-ok icon-white'></i></button>"
+            };
+        }
+
         function buttonEjectDirective() {
             return {
                 restrict: 'E',
@@ -29,6 +41,7 @@
 
         directives.btnEdit = [buttonEditDirective];
         directives.btnEject = [buttonEjectDirective];
+        directives.btnSubmit = [buttonSubmitDirective];
 
     })(pages.Directives || (pages.Directives = {}));
 })(Pages || (Pages = {}));

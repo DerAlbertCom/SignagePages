@@ -7,11 +7,13 @@
         <div ng-repeat="menu in day.menus">
             <div class="span4 show" ng-hide="menu.$_edit">
                 <em>Menu {{$index+1}}</em><br/>
-                <div class="btn-overlay" ng-show='isShowButtons(menu)' >
-                    <btn-edit title='Bearbeiten' action='edit(menu)'></btn-edit><br/>
-                    <btn-eject title='Rückgängig' action='reset(menu)'  show='isDirty(menu)'></btn-eject>
+
+                <div class="btn-overlay" ng-show='isShowButtons(menu)'>
+                    <btn-edit title='Bearbeiten' action='edit(menu)'></btn-edit>
+                    <br/>
+                    <btn-eject title='Rückgängig' action='reset(menu)' show='isDirty(menu)'></btn-eject>
                 </div>
-                <div class='preview' ng-click='edit (menu)'  ng-mouseenter='showButtons(menu)' >
+                <div class='preview' ng-click='edit (menu)' ng-mouseenter='showButtons(menu)'>
                     {{menu.row1}}<br/>
                     {{menu.row2}}<br/>
                     {{menu.price | currency}}
@@ -19,14 +21,14 @@
             </div>
             <div class='span4' ng-show='menu.$_edit'>
                 <em>Menu {{$index+1}}</em><br/>
-                <div class='edit' >
+
+                <div class='edit'>
                     <form>
-                    <input autofocus required type='text' ng-model='menu.row1' class=" span4"/><br/>
-                    <input type='text' ng-model='menu.row2' class=" span4"/><br/>
-                    Preis: <input class='price span2' type='string' ng-model='menu.price ' maxlength='5'/>
-                    <button type="submit"  class="btn btn-info btn-small"  ng-click='close(menu)' title="Übernehmen">
-                        <i class='icon-ok icon-white'></i>
-                    </button></form>
+                        <input autofocus required type='text' ng-model='menu.row1' class=" span4"/><br/>
+                        <input type='text' ng-model='menu.row2' class=" span4"/><br/>
+                        Preis: <input class='price span2' type='text' ng-model='menu.price ' maxlength='5'/>
+                        <btn-submit action="close(menu)" title='Übernehmen'></btn-submit>
+                    </form>
                 </div>
             </div>
         </div>
