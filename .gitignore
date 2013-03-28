@@ -1,4 +1,7 @@
-
+.idea/workspace.xml
+.idea/task.xml
+.idea/*.iws
+.idea/**/*.iws
 *.user
 *.obj
 *.lib
