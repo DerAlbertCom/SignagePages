@@ -17,6 +17,7 @@ namespace SignagePages.StartUp
                 .IncludeDirectory("~/app", "*directives.js")
                 .IncludeDirectory("~/app", "*controller.js")
                 .IncludeDirectory("~/app", "*routes.js")
+                .IncludeDirectory("~/app", "*factories.js")
                 .Include("~/app/app.js");
 
             var frameworkBundle = new ScriptBundle("~/resources/framework_js")

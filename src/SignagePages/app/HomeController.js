@@ -7,5 +7,5 @@
 
         controller.Home = ['$scope', homeController];
 
-    })(pages.Controller || (pages.Controller = {}));
+    })(pages.Controllers || (pages.Controllers = {}));
 })(Pages || (Pages = {}));

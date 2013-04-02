@@ -2,7 +2,7 @@
 (function (pages) {
     (function (routes) {
 
-        routes.Main = function($routeProvider) {
+        var mainRoutes = function($routeProvider) {
             $routeProvider
                 .when('/home', {
                     templateUrl: 'home.cshtml',
@@ -18,6 +18,7 @@
                 })
                 .otherwise({ redirectTo: '/home' });
         };
+        routes.Main = ['$routeProvider', mainRoutes];
 
     })(pages.Routes|| (pages.Routes = {}));
 })(Pages || (Pages = {}));

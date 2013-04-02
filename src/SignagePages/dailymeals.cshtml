@@ -9,9 +9,9 @@
                 <em>Menu {{$index+1}}</em><br/>
 
                 <div class="btn-overlay" ng-show='isShowButtons(menu)'>
-                    <btn-edit title='Bearbeiten' action='edit(menu)'></btn-edit>
+                    <button data-btn-edit title='Bearbeiten' ng-click='edit(menu)'></button>
                     <br/>
-                    <btn-eject title='Rückgängig' action='reset(menu)' show='isDirty(menu)'></btn-eject>
+                    <button btn-eject title='Rückgängig' ng-click='reset(menu)' ng-show='isDirty(menu)'></button>
                 </div>
                 <div class='preview' ng-click='edit (menu)' ng-mouseenter='showButtons(menu)'>
                     {{menu.row1}}<br/>
@@ -27,7 +27,7 @@
                         <input autofocus required type='text' ng-model='menu.row1' class=" span4"/><br/>
                         <input type='text' ng-model='menu.row2' class=" span4"/><br/>
                         Preis: <input class='price span2' type='text' ng-model='menu.price ' maxlength='5'/>
-                        <btn-submit action="close(menu)" title='Übernehmen'></btn-submit>
+                        <button btn-submit ng-click="close(menu)" title='Übernehmen'></button>
                     </form>
                 </div>
             </div>

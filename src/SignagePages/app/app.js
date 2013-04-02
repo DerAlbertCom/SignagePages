@@ -1,39 +1,15 @@
 ﻿var Pages;
 
-(function(pages) {
-
-
-    var module = angular.module('SignagePages', ['ngResource']);
+(function(namespace) {
     
-    configure(pages, 'Routes', '$routeProvider', module.config);
-    configure(pages, 'Startup', '$window', module.run);
-    configureWithName(pages, 'Directives', '$compileProvider', module.directive);
-    configureWithName(pages, 'Controller', '$scope', module.controller);
-    configureWithName(pages, 'Services', '$scope', module.service);
-    configureWithName(pages, 'Filters', '$scope', module.filter);
-    configureWithName(pages, 'Decorators', '$scope', module.decorator);
-    configureWithName(pages, 'Providers', '$scope', module.provider);
-    configureWithObject(pages, 'Values', module.value);
-    configureWithObject(pages, 'Constants', module.constant);
+    var module = angular.module('SignagePages', ['ngResource']);
 
-    function configureWithName(ns, collection, defaultProvider, configureFunc) {
-        iterateConfig(ns, collection,
-            function (name, route) {
-                configureFunc(name, route);
-            },
-            function (name, route) {
-                configureFunc(name, [defaultProvider, route]);
-            });
-    }
+    module.controller(namespace.Controllers);
+    module.directive(namespace.Directives);
+    module.factory(namespace.Factories);
 
-    function configureWithObject(ns, collection, configureFunc) {
-        for (var name in ns[collection]) {
-            var value = ns[collection][name];
-            if (angular.isObject(value)) {
-                configureFunc(name, value);
-            } else throw "wrong configured " + collection + ": " + name;
-        }
-    }
+    configure(namespace, 'Routes', '$routeProvider', module.config);
+    configure(namespace, 'Startup', '$window', module.run);
 
     function configure(ns, collection, defaultProvider, configureFunc) {
         iterateConfig(ns, collection,
@@ -55,4 +31,4 @@
             } else throw "wrong configured " + collection + ": " + name;
         }
     }
-})(Pages || (Pages = {}))
+})(Pages || (Pages = {}));
