@@ -112,20 +112,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.js" />
+    <Content Include="app\app.js">
+      <DependentUpon>app.ts</DependentUpon>
+    </Content>
+    <Content Include="app\app.ts" />
     <TypeScriptCompile Include="app\LoginController.ts" />
-    <Content Include="app\DailyMealsController.js" />
+    <Content Include="app\ButtonDirectives.js">
+      <DependentUpon>ButtonDirectives.ts</DependentUpon>
+    </Content>
+    <Content Include="app\DailyMealsController.js">
+      <DependentUpon>DailyMealsController.ts</DependentUpon>
+    </Content>
+    <Content Include="app\DailyMealsController.ts" />
     <TypeScriptCompile Include="app\DailyMealsFactories.ts" />
     <Content Include="app\DailyMealsFactories.js">
       <DependentUpon>DailyMealsFactories.ts</DependentUpon>
     </Content>
+    <Content Include="app\dataaccess.js">
+      <DependentUpon>dataaccess.ts</DependentUpon>
+    </Content>
+    <Content Include="app\HomeController.js">
+      <DependentUpon>HomeController.ts</DependentUpon>
+    </Content>
     <Content Include="app\LoginController.js">
       <DependentUpon>LoginController.ts</DependentUpon>
     </Content>
-    <Content Include="app\routes.js" />
-    <Content Include="app\HomeController.js" />
-    <Content Include="app\dataaccess.js" />
-    <Content Include="app\ButtonDirectives.js" />
+    <Content Include="app\MainRoutes.js">
+      <DependentUpon>MainRoutes.ts</DependentUpon>
+    </Content>
+    <Content Include="app\MainRoutes.ts" />
+    <Content Include="app\HomeController.ts" />
+    <Content Include="app\dataaccess.ts" />
+    <Content Include="app\ButtonDirectives.ts" />
     <Content Include="Content\app.css">
       <DependentUpon>app.less</DependentUpon>
     </Content>
@@ -322,6 +340,19 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jstd-scenario-adapter-config.js" />
     <Content Include="Scripts\jstd-scenario-adapter.js" />
+    <Content Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
+    <Content Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
+    <Content Include="Scripts\typings\angularjs\angular-resource.d.ts" />
+    <Content Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <Content Include="Scripts\typings\angularjs\angular.d.ts" />
+    <Content Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
+    <Content Include="Scripts\typings\jquery\jquery.d.ts" />
+    <Content Include="Scripts\typings\underscore\underscore-typed-1.4.2.d.ts" />
+    <Content Include="Scripts\typings\underscore\underscore-typed-1.4.3.d.ts" />
+    <Content Include="Scripts\typings\underscore\underscore-typed.d.ts" />
+    <Content Include="Scripts\typings\underscore\underscore.d.ts" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

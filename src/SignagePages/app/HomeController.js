@@ -1,11 +1,12 @@
-﻿var Pages;
-(function(pages) {
-    (function(controller) {
-
+var Pages;
+(function (Pages) {
+    (function (Controllers) {
         function homeController($scope) {
         }
-
-        controller.Home = ['$scope', homeController];
-
-    })(pages.Controllers || (pages.Controllers = {}));
+        Controllers.Home = [
+            '$scope', 
+            homeController
+        ];
+    })(Pages.Controllers || (Pages.Controllers = {}));
+    var Controllers = Pages.Controllers;
 })(Pages || (Pages = {}));
