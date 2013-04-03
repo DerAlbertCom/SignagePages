@@ -1,10 +1,10 @@
 ﻿/// <reference path="../Scripts/typings/angularjs/angular.d.ts" />
-module Pages.Controllers {} 
-module Pages.Directives {} 
-module Pages.Factories {} 
+
 
 module Pages{
-	
+	export module Controllers {}
+	export module Directives {}
+	export module Factories {}
     
     var app = angular.module('SignagePages', ['ngResource']);
 

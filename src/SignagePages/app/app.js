@@ -1,20 +1,11 @@
 var Pages;
 (function (Pages) {
-    })(Pages || (Pages = {}));
-var Pages;
-(function (Pages) {
-    })(Pages || (Pages = {}));
-var Pages;
-(function (Pages) {
-    })(Pages || (Pages = {}));
-var Pages;
-(function (Pages) {
-    var app = angular.module('SignagePages', [
+                var app = angular.module('SignagePages', [
         'ngResource'
     ]);
-    app.controller(Pages.Controllers);
-    app.directive(Pages.Directives);
-    app.factory(Pages.Factories);
+    app.controller(Controllers);
+    app.directive(Directives);
+    app.factory(Factories);
     configure(Pages, 'Routes', '$routeProvider', app.config);
     configure(Pages, 'Startup', '$window', app.run);
     function configure(ns, collection, defaultProvider, configureFunc) {
