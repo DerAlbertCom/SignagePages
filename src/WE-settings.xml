@@ -50,7 +50,7 @@
     <LessMargin_width>8</LessMargin_width>
     <LessMinify>false</LessMinify>
     <LessShowPreviewWindow>true</LessShowPreviewWindow>
-    <MarkdownMargin_width>498</MarkdownMargin_width>
+    <MarkdownMargin_width>295</MarkdownMargin_width>
     <TypeScriptAddGeneratedFilesToProject>true</TypeScriptAddGeneratedFilesToProject>
     <TypeScriptCompileES3>false</TypeScriptCompileES3>
     <TypeScriptCompileOnBuild>true</TypeScriptCompileOnBuild>

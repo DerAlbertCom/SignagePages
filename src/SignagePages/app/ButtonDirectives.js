@@ -1,6 +1,7 @@
 var Pages;
 (function (Pages) {
     (function (Directives) {
+        Directives.btnEdit;
         function buttonEditDirective() {
             return function (scope, element, attrs) {
                 element.addClass('btn btn-primary btn-mini');
@@ -19,9 +20,7 @@ var Pages;
                 element.prepend("<i class='icon-eject icon-white'></i>");
             };
         }
-        Directives.btnEdit = [
-            buttonEditDirective
-        ];
+        Directives.btnEdit = buttonEditDirective;
         Directives.btnEject = [
             buttonEjectDirective
         ];

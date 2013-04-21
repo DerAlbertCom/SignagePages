@@ -1,11 +1,11 @@
 ﻿/// <reference path="../Scripts/typings/angularjs/angular.d.ts" />
 
 
-module Pages{
-	export module Controllers {}
-	export module Directives {}
-	export module Factories {}
-    
+module Pages {
+    export module Controllers { }
+    export module Directives { }
+    export module Factories { }
+
     var app = angular.module('SignagePages', ['ngResource']);
 
     app.controller(Controllers);
@@ -17,10 +17,10 @@ module Pages{
 
     function configure(ns, collection, defaultProvider, configureFunc) {
         iterateConfig(ns, collection,
-            function(name, route) {
+            function (name, route) {
                 configureFunc(route);
             },
-            function(name, route) {
+            function (name, route) {
                 configureFunc([defaultProvider, route]);
             });
     }
